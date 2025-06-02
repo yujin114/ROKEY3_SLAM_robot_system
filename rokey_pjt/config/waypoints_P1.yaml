@@ -9,10 +9,10 @@ waypoints:
     x: -2.0103
     y: -0.0105
     yaw: 0.0
-    children: [p1_2]
+    children: [p1_0, p1_2]
 
   - id: p1_2
     x: -2.9338
     y: 0.0147
     yaw: 0.0
-    children: []
+    children: [p1_1]
