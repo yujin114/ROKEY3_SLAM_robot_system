@@ -45,7 +45,7 @@ class PathFollower(Node):
         # ─── 3) 구독: /robot0/bfs/path ───────────────────────────────────────────────
         self.create_subscription(
             String,
-            '/bfs/path',
+            '/robot0/bfs/path',
             self.path_callback,
             10
         )

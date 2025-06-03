@@ -30,13 +30,11 @@ setup(
     entry_points={
         'console_scripts': [
             'map_switcher = rokey_pjt.map_switcher:main',
-            'auto_init_pose = rokey_pjt.auto_init_pose:main',
             'bfs_path_finder = rokey_pjt.bfs_path_finder:main',
-            'bfs_navigator = rokey_pjt.bfs_navigator:main',
             'pose_publisher = rokey_pjt.pose_publisher:main',
-            'bfs_navigator_v2 = rokey_pjt.bfs_navigator_v2:main',
             'path_follower = rokey_pjt.path_follower:main',
             'dock_controller = rokey_pjt.dock_controller:main',
+            'pose_publisher_v2 = rokey_pjt.pose_publisher_v2:main',
             
         ],
     },

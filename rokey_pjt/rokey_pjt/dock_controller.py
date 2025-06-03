@@ -18,13 +18,13 @@ class DockController(Node):
         # 3) 구독: /bfs/state_pose, /bfs/goal_pose
         self.create_subscription(
             String,
-            '/bfs/state_pose',
+            '/robot0/bfs/state_pose',
             self.state_callback,
             10
         )
         self.create_subscription(
             String,
-            '/bfs/goal_pose',
+            '/robot0/bfs/goal_pose',
             self.goal_callback,
             10
         )
@@ -58,7 +58,7 @@ class DockController(Node):
                 self.get_logger().debug('[DockController] 이미 도킹 상태입니다.')
 
         # 2) state_pose == "p1_0" and goal_pose != "p1_0" and (현재 도킹 상태라면) --> 언도킹
-        elif self.state_pose == 'p1_0' and self.goal_pose != 'p1_0':
+        elif self.state_pose == 'init_pose' and self.goal_pose != 'p1_0':
             if self.dock_navigator.getDockedStatus():
                 self.get_logger().info('[DockController] 조건 충족: state==p1_0 & goal!=p1_0 & docked → undock() 호출')
                 self.dock_navigator.undock()

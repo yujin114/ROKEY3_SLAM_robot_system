@@ -44,7 +44,7 @@ class BFSPathfinder(Node):
         self.create_subscription(String, '/robot0/bfs/goal_pose', self.goal_callback, 10)
 
         # Publisher
-        self.path_pub = self.create_publisher(String, '/robot0/bfs/path', 10)
+        self.path_pub = self.create_publisher(String, 'robot0/bfs/path', 10)
 
         self.get_logger().info("BFS Pathfinder Topic Node Initialized")
 
