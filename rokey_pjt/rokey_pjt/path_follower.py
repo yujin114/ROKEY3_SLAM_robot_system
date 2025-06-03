@@ -9,6 +9,8 @@ import os
 from ament_index_python.packages import get_package_share_directory
 import math
 import time
+import threading
+from collections import deque
 
 class PathFollower(Node):
     def __init__(self):
@@ -16,8 +18,6 @@ class PathFollower(Node):
 
         # ─── 1) BasicNavigator 인스턴스 생성 ──────────────────────────────────────────
         self.nav_navigator = BasicNavigator()
-        # Nav2가 완전히 활성화될 때까지 대기
-        #self.nav_navigator.waitUntilNav2Active()
         self.get_logger().info('[PathFollower] Nav2 is active.')
 
         # ─── 2) Waypoint 좌표 로드 (YAML → dict) ─────────────────────────────────────
@@ -29,7 +29,6 @@ class PathFollower(Node):
             )
             with open(yaml_path, 'r') as f:
                 data = yaml.safe_load(f)
-            # { 'p1_0': {'x': ..., 'y': ..., 'yaw': ...}, ... }
             self.waypoint_dict = {}
             for wp in data.get('waypoints', []):
                 self.waypoint_dict[wp['id']] = {
@@ -42,7 +41,12 @@ class PathFollower(Node):
             self.get_logger().error(f'[PathFollower] Failed to load waypoints: {e}')
             self.waypoint_dict = {}
 
-        # ─── 3) 구독: /robot0/bfs/path ───────────────────────────────────────────────
+        # ─── 3) 경로 요청을 모아둘 큐 준비 ──────────────────────────────────────────────
+        self.path_queue = deque()
+        self.queue_lock = threading.Lock()
+        self.is_navigating = False
+
+        # ─── 4) 구독: /robot0/bfs/path ───────────────────────────────────────────────
         self.create_subscription(
             String,
             '/robot0/bfs/path',
@@ -51,60 +55,77 @@ class PathFollower(Node):
         )
         self.get_logger().info('[PathFollower] Subscribed to /robot0/bfs/path')
 
-        # ─── 4) 내부 상태 초기화 ─────────────────────────────────────────────────────
-        self.is_navigating = False
+        # ─── 5) 백그라운드 워커 스레드 시작 ─────────────────────────────────────────
+        t = threading.Thread(target=self.navigation_worker, daemon=True)
+        t.start()
 
     def path_callback(self, msg: String):
         """
-        msg.data: "p1_0,p1_1,p1_2,..." 형태의 waypoint ID 문자열
+        msg.data: "p1_0,p1_1,p1_2,..." 형태의 전체 waypoint ID 문자열
+        이 중 첫 번째 인덱스(현재 위치)와 두 번째 인덱스(다음 목적지)만 추출하여 큐에 저장
         """
-        if self.is_navigating:
-            self.get_logger().warn('[PathFollower] 이미 경로 이동 중입니다. 무시...')
-            return
-
         path_str = msg.data.strip()
         if not path_str:
             self.get_logger().warn('[PathFollower] 빈 경로가 도착했습니다.')
             return
 
         waypoint_ids = [wp_id.strip() for wp_id in path_str.split(',') if wp_id.strip()]
-        self.get_logger().info(f'[PathFollower] Received path: {waypoint_ids}')
+        self.get_logger().info(f'[PathFollower] Received full path: {waypoint_ids}')
 
-        # 현재 위치만 주어진 경우 이동 안 함
+        # “현재 위치 + 다음 목적지”가 둘 다 있어야 함
         if len(waypoint_ids) <= 1:
             self.get_logger().warn('[PathFollower] 이동할 경로가 없습니다. (목표가 하나 이하)')
             return
 
-        missing = [wp for wp in waypoint_ids if wp not in self.waypoint_dict]
-        if missing:
-            self.get_logger().error(f'[PathFollower] 다음 ID의 좌표가 YAML에 없습니다: {missing}')
+        current_id = waypoint_ids[0]
+        next_id    = waypoint_ids[1]
+
+        # 다음 목적지가 waypoint_dict에 반드시 있어야 함
+        if next_id not in self.waypoint_dict:
+            self.get_logger().error(f'[PathFollower] 다음 목적지 ID가 없습니다: {next_id}')
             return
 
-        self.is_navigating = True
-        for idx, wp_id in enumerate(waypoint_ids[1:]):  # 첫 번째는 현재 위치로 간주하고 skip
-            coords = self.waypoint_dict[wp_id]
+        # 큐 초기화 후 “[현재, 다음]” 페어만 저장
+        with self.queue_lock:
+            self.path_queue.clear()
+            self.path_queue.append([current_id, next_id])
+        self.get_logger().info(f'[PathFollower] 오직 다음 목표만 큐에 추가됨 → [{current_id} → {next_id}]')
 
-            # ▶ 추가: 이동 시작 로그
-            self.get_logger().info(f"[PathFollower] 이동 시작: '{wp_id}'")
+    def navigation_worker(self):
+        """
+        별도 스레드에서 큐를 모니터링하다가, 경로가 들어오면 goToPose → waitForTaskComplete 처리
+        """
+        while rclpy.ok():
+            if not self.is_navigating:
+                with self.queue_lock:
+                    if self.path_queue:
+                        waypoint_pair = self.path_queue.popleft()
+                        self.is_navigating = True
+                    else:
+                        waypoint_pair = None
 
-            target_pose = self.build_pose(coords['x'], coords['y'], coords['yaw'])
-            self.get_logger().info(f"[PathFollower] ({idx+1}/{len(waypoint_ids)-1}) → '{wp_id}'로 이동 시도: "
-                                f"x={coords['x']:.3f}, y={coords['y']:.3f}, yaw={coords['yaw']:.3f}")
+                if waypoint_pair:
+                    current_id, next_id = waypoint_pair
+                    self.get_logger().info(f'[NavigationWorker] 새 목표 시작: {current_id} → {next_id}')
 
-            self.nav_navigator.goToPose(target_pose)
-            result = self.nav_navigator.waitForTaskComplete()
+                    # 다음 목적지 하나만 이동
+                    coords = self.waypoint_dict[next_id]
+                    self.get_logger().info(f"[NavigationWorker] → '{next_id}' 이동 시도: "
+                                           f"x={coords['x']:.3f}, y={coords['y']:.3f}, yaw={coords['yaw']:.3f}")
+                    target_pose = self.build_pose(coords['x'], coords['y'], coords['yaw'])
 
-            if result == TaskResult.SUCCEEDED:
-                self.get_logger().info(f"[PathFollower] '{wp_id}' 도착 완료")
-                time.sleep(1.0)
-            else:
-                self.get_logger().warn(f"[PathFollower] '{wp_id}' 이동 실패 or 취소됨 (result={result}). 다음 목표로 계속.")
-                time.sleep(1.0)
+                    self.nav_navigator.goToPose(target_pose)
+                    result = self.nav_navigator.waitForTaskComplete()
 
+                    if result == TaskResult.SUCCEEDED:
+                        self.get_logger().info(f"[NavigationWorker] '{next_id}' 도착 완료")
+                    else:
+                        self.get_logger().warn(f"[NavigationWorker] '{next_id}' 실패 또는 취소 (result={result})")
 
-        self.get_logger().info('[PathFollower] 경로 이동이 모두 완료되었습니다.')
-        self.is_navigating = False
+                    self.get_logger().info('[NavigationWorker] 단일 목표 이동 끝')
+                    self.is_navigating = False
 
+            time.sleep(0.1)  # CPU 과부하 방지
 
     def build_pose(self, x: float, y: float, yaw: float) -> PoseStamped:
         """
@@ -113,18 +134,14 @@ class PathFollower(Node):
         pose = PoseStamped()
         pose.header.frame_id = 'map'
         pose.header.stamp = self.nav_navigator.get_clock().now().to_msg()
-
         pose.pose.position = Point(x=x, y=y, z=0.0)
-        # yaw(rad) → quaternion
+
         q = self.euler_to_quaternion(0.0, 0.0, yaw)
         pose.pose.orientation = Quaternion(x=q[0], y=q[1], z=q[2], w=q[3])
         return pose
 
     @staticmethod
     def euler_to_quaternion(roll: float, pitch: float, yaw: float):
-        """
-        단순한 Euler → Quaternion 변환 (자체 구현)
-        """
         cy = math.cos(yaw * 0.5)
         sy = math.sin(yaw * 0.5)
         cp = math.cos(pitch * 0.5)

@@ -35,6 +35,7 @@ setup(
             'path_follower = rokey_pjt.path_follower:main',
             'dock_controller = rokey_pjt.dock_controller:main',
             'pose_publisher_v2 = rokey_pjt.pose_publisher_v2:main',
+            'bfs_path_finder_v2 = rokey_pjt.bfs_path_finder_v2:main',
             
         ],
     },

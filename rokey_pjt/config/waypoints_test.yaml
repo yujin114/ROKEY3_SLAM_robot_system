@@ -6,7 +6,7 @@ waypoints:
     neighbors: [p1_0]
 
   - id: p1_0
-    x: 5.63931
+    x: 5.99259
     y: 2.95751
     yaw: 3.14066
     neighbors: [init_pose, p1_1]
