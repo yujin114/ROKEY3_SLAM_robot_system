@@ -14,41 +14,41 @@ waypoints:
   - id: p1_1
     x: 4.10092
     y: 3.35907
-    yaw: -3.10932
+    yaw: -178.1509
     neighbors: [p1_0, p1_2]
 
   - id: p1_2
     x: 3.41852
     y: 3.47976
-    yaw: -3.10017
+    yaw: -177.6266
     neighbors: [p1_1, p2_0]
 
   - id: p2_0
     x: 3.41852
     y: 3.47976
-    yaw: -3.10017
+    yaw: -177.6266
     neighbors: [p1_2, p2_1]
 
   - id: p2_1
     x: 2.54174
     y: 3.16344
-    yaw: 3.11363
+    yaw: 178.3978
     neighbors: [p2_0, p2_2, p2_3]
 
   - id: p2_2
     x: 1.29196
     y: 3.0098
-    yaw: 3.06239
+    yaw: 175.4620
     neighbors: [p2_1]
 
   - id: p2_3
     x: 2.57764
     y: 4.95708
-    yaw: 1.55816
+    yaw: 89.2759
     neighbors: [p2_1, p2_4]
 
   - id: p2_4
     x: 1.52014
     y: 5.21401
-    yaw: 3.06239
+    yaw: 175.4620
     neighbors: [p2_3]
