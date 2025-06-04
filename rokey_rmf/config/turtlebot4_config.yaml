@@ -1,0 +1,71 @@
+# ========================= FLEET CONFIG ============================
+rmf_fleet:
+  name: "tb4_fleet"
+  fleet_manager:
+    ip: "0.0.0.0"
+    port: 11811
+    user: "ubuntu"
+    password: "turtlebot4"
+
+  limits:
+    linear: [0.26, 0.5]         # 최대 속도, 가속도
+    angular: [1.82, 2.5]        # 최대 회전 속도, 가속도
+
+  profile:
+    footprint: 0.22             # 로봇 반지름
+    vicinity: 0.4               # 근접 반경
+
+  reversible: false
+
+  battery_system:
+    voltage: 12.0               # 전압 (V)
+    capacity: 5.0               # 용량 (Ah)
+    charging_current: 2.0       # 충전 전류 (A)
+
+  mechanical_system:
+    mass: 15.0
+    moment_of_inertia: 1.0
+    friction_coefficient: 0.2
+
+  ambient_system:
+    power: 20.0
+
+  tool_system:
+    power: 0.0
+
+  recharge_threshold: 0.2
+  recharge_soc: 1.0
+
+  publish_fleet_state: 10.0
+  account_for_battery_drain: false
+
+  task_capabilities:
+    loop: true
+    delivery: false
+    clean: false
+    finishing_request: "park"
+
+# ======================== ROBOT CONFIG =============================
+robots:
+  robot1:
+    robot_config:
+      max_delay: 10.0
+
+      # (Optional) 명시적으로 토픽 지정하는 경우
+      robot_manager:
+        base_frame: "base_footprint"
+        odom_topic: "/robot1/odom"
+        cmd_vel_topic: "/robot1/cmd_vel"
+        amcl_pose_topic: "/robot1/amcl_pose"
+        goal_pose_topic: "/robot1/goal_pose"
+        map_frame: "map"
+        robot_state_update_frequency: 10.0
+
+    rmf_config:
+      robot_state_update_frequency: 10.0
+      start:
+        map_name: "P1"
+        waypoint: "docking"
+        orientation: 0.0
+      charger:
+        waypoint: "docking"

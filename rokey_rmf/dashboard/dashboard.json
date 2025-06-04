@@ -1,0 +1,16 @@
+{
+  "world_name": "tb_1 World",
+  "valid_task": ["LooP"],
+  "task": {
+    "Loop": {
+      "places": [
+        "dock",
+        "P1",
+        "P2",
+        "P3",
+        "delay",
+        "elevator"
+      ]
+    }
+  }
+}
