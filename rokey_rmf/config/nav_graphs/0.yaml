@@ -1,0 +1,23 @@
+# ── config/nav_graph/0.yaml ──
+name: test               # (1) building_name과 같아야 합니다.
+vertices:
+  - [66.336, -37.972, {name: dock}]
+  - [24.771, -37.972, {name: p1}]
+  - [24.771, -14.094, {name: mid1}]
+  - [9.149,  -14.094, {name: elevator}]
+  - [24.771, -59.552, {name: mid2}]
+  - [38.563, -64.009, {name: p2}]
+  - [61.175, -64.712, {name: p3}]
+lanes:
+  - [0, 1]   # dock → p1
+  - [1, 0]   # p1 → dock
+  - [1, 2]   # p1 → mid1
+  - [2, 1]   # mid1 → p1
+  - [2, 3]   # mid1 → elevator
+  - [3, 2]   # elevator → mid1
+  - [1, 4]   # p1 → mid2
+  - [4, 1]   # mid2 → p1
+  - [4, 5]   # mid2 → p2
+  - [5, 4]   # p2 → mid2
+  - [5, 6]   # p2 → p3
+  - [6, 5]   # p3 → p2

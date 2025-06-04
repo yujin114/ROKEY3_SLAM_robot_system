@@ -1,0 +1,31 @@
+<?xml version='1.0' ?>
+
+<launch>
+  <arg name="use_sim_time" default="false"/>
+
+  <!-- Common launch -->
+  <include file="$(find-pkg-share rmf_demos)/common.launch.xml">
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    <!-- <arg name="viz_config_file" value ="$(find-pkg-share rmf_demos)/include/hotel/hotel.rviz"/> -->
+    <arg name="config_file" value="/home/weed/rokey_ws/maps/tbt_1.building.yaml"/>
+    <arg name="dashboard_config_file" value="$(find-pkg-share rokey_rmf)/dashboard/dashboard.json"/>
+  </include>
+  <node pkg="rmf_demos_fleet_adapter"
+      exec="fleet_adapter"
+      name="tb4_adapter"
+      output="screen"
+      args="--config_file /home/weed/rokey_ws/src/rokey_rmf/config/turtlebot4_config.yaml \
+            --nav_graph /home/weed/rokey_ws/maps/tb4_robot1/0.yaml">
+  </node>
+
+
+  <!-- turtlebot4 fleet adapter -->
+  <!-- <group>
+    <include file="$(find-pkg-share rmf_demos_fleet_adapter)/launch/fleet_adapter.launch.xml">
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rokey_rmf)/config/nav_graphs/0.yaml" />
+      <arg name="config_file" value="$(find-pkg-share rokey_rmf)/config/turtlebot4_config.yaml"/>
+    </include>
+  </group> -->
+
+</launch>
