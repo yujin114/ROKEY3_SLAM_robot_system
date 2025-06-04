@@ -1,0 +1,14 @@
+waypoints:
+  - id: P1
+    map_id: P1
+    entry_wp: p1_0
+    exit_wp: p1_2
+    neighbors:
+      - P2   # ↘️ P1 → P2
+
+  - id: P2
+    map_id: P2
+    entry_wp: p2_0
+    exit_wp: p2_1
+    neighbors:
+      - P1   # ↖️ P2 → P1
