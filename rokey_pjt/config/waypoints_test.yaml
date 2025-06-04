@@ -1,13 +1,13 @@
 waypoints:
   - id: init_pose
-    x: 6.2295
+    x: 6.2895
     y: 3.05263
     yaw: -0.146699
     neighbors: [p1_0]
 
   - id: p1_0
-    x: 5.99259
-    y: 2.95751
+    x: 6.07259
+    y: 2.99751
     yaw: 3.14066
     neighbors: [init_pose, p1_1]
 
@@ -24,10 +24,10 @@ waypoints:
     neighbors: [p1_1, p2_0]
 
   - id: p2_0
-    x: 6.2295
-    y: 3.05263
-    yaw: -0.146699
-    neighbors: [p1_2, p1_1]
+    x: 3.41852
+    y: 3.47976
+    yaw: -3.10017
+    neighbors: [p1_2, p2_1]
 
   - id: p2_1
     x: 2.54174

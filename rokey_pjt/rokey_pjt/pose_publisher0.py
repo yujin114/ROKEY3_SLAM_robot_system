@@ -44,7 +44,7 @@ def create_pose(x, y, yaw_deg, navigator):
 
 class WaypointInitialPoseSetter(Node):
     def __init__(self):
-        super().__init__('pose_publisher')
+        super().__init__('pose_publisher0')
 
         # Nav2 Navigator 생성
         self.navigator = BasicNavigator()

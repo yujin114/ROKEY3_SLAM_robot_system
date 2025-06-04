@@ -6,7 +6,7 @@ from turtlebot4_navigation.turtlebot4_navigator import TurtleBot4Navigator
 
 class DockController(Node):
     def __init__(self):
-        super().__init__('dock_controller')
+        super().__init__('dock_controller0')
 
         # 1) TurtleBot4Navigator 인스턴스 생성
         self.dock_navigator = TurtleBot4Navigator()
