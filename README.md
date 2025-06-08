@@ -16,7 +16,9 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
   <img src="https://img.shields.io/badge/ROS2-Humble-blue?logo=ros" />
   <img src="https://img.shields.io/badge/TurtleBot4-robot-brightgreen?logo=raspberrypi" />
   <img src="https://img.shields.io/badge/Python-3.10-yellow?logo=python" />
+  <img src="https://img.shields.io/badge/C++-language-00599C?logo=c%2B%2B" />
   <img src="https://img.shields.io/badge/YOLOv8-CV-red?logo=opencv" />
+  <img src="https://img.shields.io/badge/Tesseract-OCR-blueviolet?logo=google" />
   <img src="https://img.shields.io/badge/EasyOCR-OCR-orange?logo=openai" />
   <img src="https://img.shields.io/badge/SQLite-database-lightgrey?logo=sqlite" />
   <img src="https://img.shields.io/badge/MySQL-database-blue?logo=mysql" />
