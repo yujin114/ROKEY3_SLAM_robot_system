@@ -68,21 +68,51 @@ Thanks to these wonderful people who have contributed to this project:
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/weedmo"><img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br /><sub><b>weedmo</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/yujin114"><img src="https://github.com/yujin114.png" width="100px;" alt="yujin114"/><br /><sub><b>weedmo</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/ethica-alt"><img src="https://github.com/ethica-alt.png" width="100px;" alt="ethica-alt"/><br /><sub><b>weedmo</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/jsbae-RL"><img src="https://github.com/weedmo.png" width="100px;" alt="jsbae-RL"/><br /><sub><b>jsbae-RL</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/weedmo"><img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br /><sub><b>weedmo</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/weedmo"><img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br /><sub><b>weedmo</b></sub></a></td>
-  </tr>
-   <td align="center"><a href="https://github.com/weedmo"><img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br /><sub><b>weedmo</b></sub></a></td>
+    <td align="center">
+      <a href="https://github.com/weedmo">
+        <img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br />
+        <sub><b>weedmo</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/yujin114">
+        <img src="https://github.com/yujin114.png" width="100px;" alt="yujin114"/><br />
+        <sub><b>yujin114</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ethica-alt">
+        <img src="https://github.com/ethica-alt.png" width="100px;" alt="ethica-alt"/><br />
+        <sub><b>ethica-alt</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jsbae-RL">
+        <img src="https://github.com/weedmo.png" width="100px;" alt="jsbae-RL"/><br />
+        <sub><b>jsbae-RL</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/weedmo">
+        <img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br />
+        <sub><b>weedmo</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/weedmo">
+        <img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br />
+        <sub><b>weedmo</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/weedmo">
+        <img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br />
+        <sub><b>weedmo</b></sub>
+      </a>
+    </td>
   </tr>
 </table>
+
 
 ---
 
