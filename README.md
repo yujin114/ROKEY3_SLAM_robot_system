@@ -10,6 +10,19 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 ---
 
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ROS2-Humble-blue?logo=ros" />
+  <img src="https://img.shields.io/badge/TurtleBot4-robot-brightgreen?logo=raspberrypi" />
+  <img src="https://img.shields.io/badge/Python-3.10-yellow?logo=python" />
+  <img src="https://img.shields.io/badge/YOLOv8-CV-red?logo=opencv" />
+  <img src="https://img.shields.io/badge/Tesseract-OCR-blueviolet?logo=google" />
+  <img src="https://img.shields.io/badge/SQLite-database-lightgrey?logo=sqlite" />
+</p>
+
+---
+
 ## 🎯 Use Case Scenario
 
 1. A vehicle enters a **blind zone** and is detected using **YOLO-based vision**.
@@ -35,19 +48,6 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
   <img src="https://your_license_plate_recognition_image_link_here.jpg" width="60%">
   <p><i>Example: Successfully detected and matched license plate</i></p>
 </div>
-
----
-
-## 🛠️ Tech Stack
-
-<p align="center">
-  <img src="https://img.shields.io/badge/ROS2-Humble-blue?logo=ros" />
-  <img src="https://img.shields.io/badge/TurtleBot4-robot-brightgreen?logo=raspberrypi" />
-  <img src="https://img.shields.io/badge/Python-3.10-yellow?logo=python" />
-  <img src="https://img.shields.io/badge/YOLOv8-CV-red?logo=opencv" />
-  <img src="https://img.shields.io/badge/Tesseract-OCR-blueviolet?logo=google" />
-  <img src="https://img.shields.io/badge/SQLite-database-lightgrey?logo=sqlite" />
-</p>
 
 ---
 
