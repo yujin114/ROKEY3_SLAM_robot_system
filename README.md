@@ -79,20 +79,13 @@ ros2 launch illegal_parking multi_robot.launch.py
 
 ## 👥 Contributors
 
-| Name             | Role                              | Affiliation              |
-| ---------------- | --------------------------------- | ------------------------ |
-| Junmo Han (한준모)  | Lead Developer / ROS2 Integration | Doosan Robotics Bootcamp |
-| \[Contributor 2] | Computer Vision / OCR             | \[Institution or Role]   |
-| \[Contributor 3] | System Architecture               | \[Institution or Role]   |
+Thanks to these wonderful people who have contributed to this project:
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/weedmo"><img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br /><sub><b>weedmo</b></sub></a></td>
+  </tr>
+</table>
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
----
-
-## 💬 Contact
-
-Feel free to reach out via [GitHub Issues](https://github.com/your-username/turtlebot4_illegal_parking/issues) for feedback or questions.
