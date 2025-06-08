@@ -6,13 +6,14 @@ from std_msgs.msg import Int32, String
 from irobot_create_msgs.msg import AudioNoteVector, AudioNote
 from builtin_interfaces.msg import Duration
 import threading
+import time 
 
 class MissionPlanner(Node):
     def __init__(self):
         super().__init__('controller0')
 
         # 상태 변수
-        self.goal_sequence = ['p1_1', 'p1_2', 'p1_3']
+        self.goal_sequence = ['p2_2', 'p2_3', 'p2_4']
         self.return_goal = 'p1_0'
         self.current_index = 0
         self.current_goal = None
@@ -46,6 +47,7 @@ class MissionPlanner(Node):
             self.get_logger().warn('[MissionPlanner] Detected alert! Returning to p1_0.')
             self.send_beep()  # 삐뽀삐보 소리 재생
 
+
             with self.lock:
                 self.is_mission_started = False
                 self.is_returning = True
@@ -76,7 +78,8 @@ class MissionPlanner(Node):
             self.start_goal_timer(next_goal)
         else:
             self.get_logger().info('[MissionPlanner] All goals completed.')
-
+            time.sleep(5) 
+            
     def start_goal_timer(self, goal_id: str):
         if self.timer:
             self.timer.cancel()
