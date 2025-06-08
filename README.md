@@ -1,4 +1,4 @@
-# 🚓 TurtleBot4 Multi-Robot Surveillance System
+# 🚓 TurtleBot4 Multi-Robot Park Patroll
 
 **Autonomous illegal parking detection system using TurtleBot4 robots**, developed as part of the **Doosan Robotics Bootcamp 2025**.
 
@@ -12,13 +12,14 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 ## 🎯 Use Case Scenario
 
-1. A vehicle is detected by the surveillance system (YOLO-based vision).
-2. A TurtleBot4 robot is dispatched to the location.
-3. The robot captures the license plate and performs **OCR-based recognition**.
-4. It checks the plate number against a local database of authorized vehicles.
-5. If the plate is not found → 🚨 **illegal parking alert** is triggered.
-6. A speaker plays an alarm sound to notify nearby personnel.
-7. The system is deployed in two zones, each covered by an independent TurtleBot4 robot (multi-robot operation).
+1. A vehicle enters a **blind zone** and is detected using **YOLO-based vision**.
+2. The nearest TurtleBot4 robot executes **Nav2 navigation** to approach the vehicle.
+3. The robot performs **local patrol** and identifies any **parked vehicle**.
+4. The license plate number and current position are sent to a **central system controller**.
+5. The controller queries a **local database** to verify the license plate.
+6. If the vehicle is unauthorized → 🚨 **illegal parking alert** is triggered.
+7. The alert is visualized on a **GUI dashboard** and stored in a **monitoring database**, displaying the **vehicle number and zone information**.
+8. The system operates in **two zones**, each covered by a **dedicated TurtleBot4 robot** (multi-robot architecture).
 
 ---
 
