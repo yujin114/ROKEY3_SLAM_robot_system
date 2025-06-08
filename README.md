@@ -18,11 +18,14 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
   <img src="https://img.shields.io/badge/Python-3.10-yellow?logo=python" />
   <img src="https://img.shields.io/badge/YOLOv8-CV-red?logo=opencv" />
   <img src="https://img.shields.io/badge/Tesseract-OCR-blueviolet?logo=google" />
+  <img src="https://img.shields.io/badge/EasyOCR-OCR-orange?logo=openai" />
   <img src="https://img.shields.io/badge/SQLite-database-lightgrey?logo=sqlite" />
   <img src="https://img.shields.io/badge/MySQL-database-blue?logo=mysql" />
   <img src="https://img.shields.io/badge/FastAPI-backend-green?logo=fastapi" />
   <img src="https://img.shields.io/badge/Docker-container-2496ED?logo=docker" />
+  <img src="https://img.shields.io/badge/Nav2-navigation-critical?logo=mapbox" />
 </p>
+
 
 
 ---
