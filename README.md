@@ -1,4 +1,3 @@
-# 🚓 TurtleBot4 Multi-Robot Park Patroll
 <p align="center">
   <img src="https://img.shields.io/badge/ROS2-Humble-blue?logo=ros" />
   <img src="https://img.shields.io/badge/TurtleBot4-robot-brightgreen?logo=raspberrypi" />
@@ -11,7 +10,10 @@
   <img src="https://img.shields.io/badge/FastAPI-backend-green?logo=fastapi" />
   <img src="https://img.shields.io/badge/Docker-container-2496ED?logo=docker" />
   <img src="https://img.shields.io/badge/Nav2-navigation-critical?logo=mapbox" />
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?logo=apache" />
 </p>
+
+# 🚓 TurtleBot4 Multi-Robot Park Patroll
 
 **Autonomous illegal parking detection system using TurtleBot4 robots**, developed as part of the **Doosan Robotics Bootcamp 2025**.
 
