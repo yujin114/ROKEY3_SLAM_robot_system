@@ -44,14 +44,6 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 ---
 
-## 🖼️ License Plate Recognition
-
-<div align="center">
-  <img src="https://your_license_plate_recognition_image_link_here.jpg" width="60%">
-  <p><i>Example: Successfully detected and matched license plate</i></p>
-</div>
-
----
 
 ## 🔁 System Architecture
 
