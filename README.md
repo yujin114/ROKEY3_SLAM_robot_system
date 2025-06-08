@@ -100,9 +100,9 @@ Thanks to these wonderful people who have contributed to this project:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Jay_Lee">
-        <img src="https://github.com/Jay_Lee.png" width="100px;" alt="Jay_Lee"/><br />
-        <sub><b>Jay_Lee</b></sub>
+      <a href="https://github.com/SmiteLims">
+        <img src="https://github.com/SmiteLims.png" width="100px;" alt="SmiteLims"/><br />
+        <sub><b>SmiteLims</b></sub>
       </a>
     </td>
     <td align="center">
