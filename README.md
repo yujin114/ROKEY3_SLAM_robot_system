@@ -112,9 +112,9 @@ Thanks to these wonderful people who have contributed to this project:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/weedmo">
-        <img src="https://github.com/weedmo.png" width="100px;" alt="weedmo"/><br />
-        <sub><b>weedmo</b></sub>
+      <a href="https://github.com/kimdoyub">
+        <img src="https://github.com/kimdoyub.png" width="100px;" alt="kimdoyub"/><br />
+        <sub><b>kimdoyub</b></sub>
       </a>
     </td>
   </tr>
