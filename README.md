@@ -70,6 +70,11 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 ### 🗺️ Custom Navigation Graph with BFS
 - Implements a **custom waypoint-based navigation graph**.
 - Uses **Breadth-First Search (BFS)** algorithm for efficient path planning between patrol points.
+  
+
+
+https://github.com/user-attachments/assets/e778cc09-09c9-4d90-a254-36ccd643994e
+
 
 ### 📊 Real-Time Dashboard
 - Monitors robot patrol status and OCR results in real time.
