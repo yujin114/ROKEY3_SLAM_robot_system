@@ -83,7 +83,7 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 - Displays **unauthorized vehicle detections** by zone.
 - Visual feedback for system alerts and mission states.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ce79af0a-64f4-4c7b-b4be-d8aa1e960cdf" width="20%" alt="dashboard"/>
+  <img src="https://github.com/user-attachments/assets/721c0d23-95d1-4b73-9345-4e0688aaf56f" width="20%" alt="dashboard"/>
 </p>
 
 ### 🗃️ Local Database Integration
