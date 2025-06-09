@@ -40,7 +40,12 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 ## 🎥 Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/ikRZk5629sc/0.jpg)](https://youtu.be/ikRZk5629sc)
+<p align="center">
+  <a href="https://youtu.be/ikRZk5629sc">
+    <img src="https://img.youtube.com/vi/ikRZk5629sc/0.jpg" alt="Watch the video"/>
+  </a>
+</p>
+
 
 ---
 
