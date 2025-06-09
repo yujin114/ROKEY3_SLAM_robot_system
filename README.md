@@ -63,7 +63,7 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 - Recognizes license plates using **Easy OCR** with **depth-guided localization**.
 - Measures distance to license plate using a **depth camera** to enhance recognition accuracy.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ce79af0a-64f4-4c7b-b4be-d8aa1e960cdf" width="45%" alt="obt3"/>
+  <img src="https://github.com/user-attachments/assets/ce79af0a-64f4-4c7b-b4be-d8aa1e960cdf" width="30%" alt="obt3"/>
   <a href="https://youtu.be/bcQ5DJo0aFE">
     <img src="https://img.youtube.com/vi/ikRZk5629sc/0.jpg" width="45%" alt="Watch the video"/>
   </a>
