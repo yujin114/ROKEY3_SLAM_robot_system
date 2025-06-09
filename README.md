@@ -51,6 +51,9 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 
 ## 🔁 System Architecture
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/87b2cd6b-dec9-4c9d-9b13-1d4321aad650" alt="image" width="60%"/>
+</p>
 
 * `robot0`: Patrols Zone 1, checks vehicle presence, detects license plate, and raises alert.
 * `robot1`: Operates in Zone 2, performs same tasks independently.
