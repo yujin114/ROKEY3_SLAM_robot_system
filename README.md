@@ -82,6 +82,9 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 - Monitors robot patrol status and OCR results in real time.
 - Displays **unauthorized vehicle detections** by zone.
 - Visual feedback for system alerts and mission states.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ce79af0a-64f4-4c7b-b4be-d8aa1e960cdf" width="20%" alt="dashboard"/>
+</p>
 
 ### 🗃️ Local Database Integration
 - Maintains a **whitelist** of authorized license plates.
