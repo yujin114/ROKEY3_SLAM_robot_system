@@ -56,6 +56,30 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 
 ---
 
+## 🔧 Features
+
+### 🚘 AI Computer Vision (YOLOv8 + OCR + Depth)
+- Detects vehicles using **YOLOv8** object detection.
+- Recognizes license plates using **Easy OCR** with **depth-guided localization**.
+- Measures distance to license plate using a **depth camera** to enhance recognition accuracy.
+![obt3](https://github.com/user-attachments/assets/ce79af0a-64f4-4c7b-b4be-d8aa1e960cdf)
+[![Watch the video](https://img.youtube.com/vi/ikRZk5629sc/0.jpg)](https://youtu.be/bcQ5DJo0aFE)
+
+### 🗺️ Custom Navigation Graph with BFS
+- Implements a **custom waypoint-based navigation graph**.
+- Uses **Breadth-First Search (BFS)** algorithm for efficient path planning between patrol points.
+
+### 📊 Real-Time Dashboard
+- Monitors robot patrol status and OCR results in real time.
+- Displays **unauthorized vehicle detections** by zone.
+- Visual feedback for system alerts and mission states.
+
+### 🗃️ Local Database Integration
+- Maintains a **whitelist** of authorized license plates.
+- Matches OCR results against the database to determine **illegal parking**.
+- Sends alert messages if an unauthorized vehicle is detected.
+
+---
 ## 👥 Contributors
 
 Thanks to these wonderful people who have contributed to this project:
