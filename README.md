@@ -5,7 +5,6 @@
   <img src="https://img.shields.io/badge/C++-language-00599C?logo=c%2B%2B" />
   <img src="https://img.shields.io/badge/YOLOv8-CV-red?logo=opencv" />
   <img src="https://img.shields.io/badge/EasyOCR-OCR-orange?logo=openai" />
-  <img src="https://img.shields.io/badge/SQLite-database-lightgrey?logo=sqlite" />
   <img src="https://img.shields.io/badge/MySQL-database-blue?logo=mysql" />
   <img src="https://img.shields.io/badge/FastAPI-backend-green?logo=fastapi" />
   <img src="https://img.shields.io/badge/Docker-container-2496ED?logo=docker" />
