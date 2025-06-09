@@ -95,6 +95,11 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 - Maintains a **whitelist** of authorized license plates.
 - Matches OCR results against the database to determine **illegal parking**.
 - Sends alert messages if an unauthorized vehicle is detected.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dff980d4-09ef-4605-9a57-9eb5748b8e0f" width="45%" alt="image1"/>
+  <img src="https://github.com/user-attachments/assets/36fc4f0c-4edc-48f4-97d6-b247781f8148" width="45%" alt="image2"/>
+</p>
+
 
 ---
 ## 👥 Contributors
