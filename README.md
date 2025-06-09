@@ -71,9 +71,11 @@ This project demonstrates a **multi-robot surveillance system** using two Turtle
 - Implements a **custom waypoint-based navigation graph**.
 - Uses **Breadth-First Search (BFS)** algorithm for efficient path planning between patrol points.
   
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/391fbd0a-d164-4aee-8ad7-f4cfebed90b0)" width="30%" alt="nomalvsBFS"/>
+</p>
 
 
-https://github.com/user-attachments/assets/e778cc09-09c9-4d90-a254-36ccd643994e
 
 
 ### 📊 Real-Time Dashboard
