@@ -12,9 +12,9 @@
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?logo=apache" />
 </p>
 
-# 🚓 TurtleBot4 Multi-Robot Park Patroll
+# 🚓 TurtleBot4 Multi-Robot Park Patrol
 
-**Autonomous illegal parking detection system using TurtleBot4 robots**, developed as part of the **Doosan Robotics Bootcamp 2025**.
+**Autonomous illegal parking detection system using TurtleBot4 robots**, developed as part of the **Doosan Rokey Bootcamp 3 in 2025**.
 
 ---
 
